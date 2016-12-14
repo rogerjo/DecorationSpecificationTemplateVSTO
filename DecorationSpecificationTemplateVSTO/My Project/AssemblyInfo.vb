@@ -9,10 +9,10 @@ Imports System.Security
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("DecorationSpecificationTemplateVSTO")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("DecorationSpecificationTemplateVSTO")> 
+<Assembly: AssemblyTitle("Decoration Specification")>
+<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyCompany("Axis Communications AB")>
+<Assembly: AssemblyProduct("Decoration Specification Template")>
 <Assembly: AssemblyCopyright("Copyright ©  2016")> 
 <Assembly: AssemblyTrademark("")> 
 

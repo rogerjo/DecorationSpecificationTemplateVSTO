@@ -7,16 +7,40 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>Library</OutputType>
     <RootNamespace>DecorationSpecificationTemplateVSTO</RootNamespace>
-    <AssemblyName>DecorationSpecificationTemplateVSTO</AssemblyName>
+    <AssemblyName>DecoSpecTemplate</AssemblyName>
     <VSTO_HostDocumentName>Decoration Specification Template R1.5.dotm</VSTO_HostDocumentName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <DefineConstants>VSTO40</DefineConstants>
     <OfficeApplication>Word</OfficeApplication>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
-    <BootstrapperComponentsLocation>HomeSite</BootstrapperComponentsLocation>
     <ProjectGuid>{13CBF424-06BD-4761-B708-BA406E4B69C0}</ProjectGuid>
+    <SolutionID>f9c5a7ca-1d82-471f-9a03-941c02433917</SolutionID>
+    <IsWebBootstrapper>False</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>P:\decoration_specification\Installation\</PublishUrl>
+    <InstallUrl />
+    <TargetCulture>en</TargetCulture>
+    <ApplicationVersion>1.0.0.5</ApplicationVersion>
+    <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateInterval>0</UpdateInterval>
+    <UpdateIntervalUnits>days</UpdateIntervalUnits>
+    <ProductName>DecorationSpecificationTemplateVSTO</ProductName>
+    <PublisherName />
+    <SupportUrl />
+    <FriendlyName>DecorationSpecificationTemplateVSTO</FriendlyName>
+    <OfficeApplicationDescription />
   </PropertyGroup>
   <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
       <Visible>False</Visible>
       <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
@@ -39,7 +63,7 @@
     <DebugSymbols>true</DebugSymbols>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>DecorationSpecificationTemplateVSTO.xml</DocumentationFile>
+    <DocumentationFile>DecoSpecTemplate.xml</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
@@ -52,7 +76,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>DecorationSpecificationTemplateVSTO.xml</DocumentationFile>
+    <DocumentationFile>DecoSpecTemplate.xml</DocumentationFile>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
@@ -118,9 +142,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Decoration Specification Template R1.5.dotm" />
+    <Compile Include="ActionsPane.Designer.vb">
+      <DependentUpon>ActionsPane.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ActionsPane.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ThisDocument.vb">
       <DependentUpon>Decoration Specification Template R1.5.dotm</DependentUpon>
     </Compile>
+    <None Include="DecorationSpecificationTemplateVSTO_1_TemporaryKey.pfx" />
+    <None Include="DecorationSpecificationTemplateVSTO_TemporaryKey.pfx" />
     <None Include="ThisDocument.Designer.xml">
       <DependentUpon>ThisDocument.vb</DependentUpon>
     </None>
@@ -128,6 +160,9 @@
       <DependentUpon>ThisDocument.Designer.xml</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <EmbeddedResource Include="ActionsPane.resx">
+      <DependentUpon>ActionsPane.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -165,14 +200,29 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DecorationSpecificationTemplateVSTO_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9CB51F282D860DF075FC20B9B38D2E91483A21E3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DecorationSpecificationTemplateVSTO_1_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="Decoration Specification Template R1.5.dotm" HostPackage="{18A3A5AC-5778-4778-901C-ADAAC08E910A}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="DOT" Language="VB" TemplatesPath="VSTOTemplates" DebugInfoExeName="C:\Program Files (x86)\Microsoft Office\root\Office16\WINWORD.EXE" DebugInfoCommandLine="/w /z&quot;[$OUTPUT]Decoration Specification Template R1.5.dotm&quot;" />
-        <Host Name="Word Document" Path=".\Decoration Specification Template R1.5.dotm">
-          <HostItem Name="ThisDocument" Code="ThisDocument.vb" CanonicalName="ThisDocument" Blueprint="ThisDocument.Designer.xml" GeneratedCode="ThisDocument.Designer.vb" />
+        <Host Name="Word Document" Path=".\Decoration Specification Template R1.5.dotm" PublishedHash="CFECFF3FB805E9A295392C4C85A42160CA201773">
+          <HostItem Name="ThisDocument" Code="ThisDocument.vb" CanonicalName="ThisDocument" PublishedHash="7F6F56081CA95DCED33C91680AA20C3010BE4E6B" Blueprint="ThisDocument.Designer.xml" GeneratedCode="ThisDocument.Designer.vb" />
         </Host>
       </FlavorProperties>
     </VisualStudio>
